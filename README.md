@@ -2,7 +2,7 @@
 
 The Smart Logistics Platform is a modern, production grade web application that reimagines how logistics operations are managed from end to end. Designed around a role based architecture, it delivers three distinct experiences an **Admin Panel** for operational oversight and courier dispatch, a **User Dashboard** for shipment creation and package tracking, and a **Courier Workspace** for managing assigned deliveries in the field. Every status change is broadcast instantly through real time WebSocket channels, giving all stakeholders immediate visibility into the delivery pipeline. Built with Next.js, NestJS, PostgreSQL and Socket.IO, the platform combines enterprise level security practices JWT authentication with token rotation, ownership enforced access control and comprehensive audit logging with a clean, responsive interface that works seamlessly across devices.
 
-![CI](https://github.com/krookskala/Smart-Logistic-Platform/actions/workflows/ci.yml/badge.svg)
+![CI]([https://github.com/kr/Smart-Logistic-Platform](https://github.com/MuhammadHamzaSajjad274/logistics-system/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-20+-green.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
