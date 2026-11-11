@@ -1,26 +1,51 @@
-# Smart Logistics System
+<div align="center">
 
-The Smart Logistics System is a modern, production grade web application that reimagines how logistics operations are managed from end to end. Designed around a role based architecture, it delivers three distinct experiences an **Admin Panel** for operational oversight and courier dispatch, a **User Dashboard** for shipment creation and package tracking, and a **Courier Workspace** for managing assigned deliveries in the field. Every status change is broadcast instantly through real time WebSocket channels, giving all stakeholders immediate visibility into the delivery pipeline. Built with Next.js, NestJS, PostgreSQL and Socket.IO, the platform combines enterprise level security practices JWT authentication with token rotation, ownership enforced access control and comprehensive audit logging with a clean, responsive interface that works seamlessly across devices.
+# 🚚 Logistic System
 
-![CI]([https://github.com/kr/Smart-Logistic-Platform](https://github.com/MuhammadHamzaSajjad274/logistics-system/actions/workflows/ci.yml/badge.svg)
+**A modern, production-grade, role-based logistics platform with real-time shipment tracking.**
+
+[![CI](https://github.com/MuhammadHamzaSajjad274/logistics-system/actions/workflows/ci.yml/badge.svg)](https://github.com/MuhammadHamzaSajjad274/logistics-system/actions/workflows/ci.yml)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-20+-green.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![NestJS](https://img.shields.io/badge/NestJS-10-E0234E.svg)
+![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791.svg)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-realtime-010101.svg)
+![Docker](https://img.shields.io/badge/Docker-ready-2496ED.svg)
+
+</div>
 
 ---
 
-![Image](https://github.com/user-attachments/assets/588ad818-0b28-4907-96e5-30ad72eb0540)
+## Overview
 
-![Image](https://github.com/user-attachments/assets/bfadab6a-67f0-49ec-9465-fac084e4eb54)
+Logistic System is a modern, production grade web application that reimagines how logistics operations are managed from end to end. Designed around a role based architecture, it delivers three distinct experiences:
 
-![Image](https://github.com/user-attachments/assets/0185431e-5e0b-4a58-9d15-d3a06c741afd)
+| Experience | Purpose |
+|---|---|
+| 🛡️ **Admin Panel** | Operational oversight and courier dispatch |
+| 📦 **User Dashboard** | Shipment creation and package tracking |
+| 🏍️ **Courier Workspace** | Managing assigned deliveries in the field |
 
-![Image](https://github.com/user-attachments/assets/85a00282-ff35-4d13-8100-0e3742e5dec9)
+Every status change is broadcast instantly through real time WebSocket channels, giving all stakeholders immediate visibility into the delivery pipeline. Built with Next.js, NestJS, PostgreSQL and Socket.IO, the platform combines enterprise level security practices (JWT authentication with token rotation, ownership enforced access control and comprehensive audit logging) with a clean, responsive interface that works seamlessly across devices.
 
-![Image](https://github.com/user-attachments/assets/16db5167-8e9c-444c-a7ee-ccf68e619e7a)
+---
 
-![Image](https://github.com/user-attachments/assets/e44c008e-be3c-491f-81b4-bc59857b7a3a)
+## Screenshots
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/588ad818-0b28-4907-96e5-30ad72eb0540" alt="Screenshot 1" width="48%" />
+  <img src="https://github.com/user-attachments/assets/bfadab6a-67f0-49ec-9465-fac084e4eb54" alt="Screenshot 2" width="48%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0185431e-5e0b-4a58-9d15-d3a06c741afd" alt="Screenshot 3" width="48%" />
+  <img src="https://github.com/user-attachments/assets/85a00282-ff35-4d13-8100-0e3742e5dec9" alt="Screenshot 4" width="48%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/16db5167-8e9c-444c-a7ee-ccf68e619e7a" alt="Screenshot 5" width="48%" />
+  <img src="https://github.com/user-attachments/assets/e44c008e-be3c-491f-81b4-bc59857b7a3a" alt="Screenshot 6" width="48%" />
+</p>
 
 ---
 
@@ -42,52 +67,52 @@ The Smart Logistics System is a modern, production grade web application that re
 
 ## Features
 
-**Role Based Dashboards**
+### 🎭 Role Based Dashboards
 
 - Three distinct dashboards tailored for Admin, User, and Courier roles
 - Automatic role detection and dashboard routing after login
 - Profile management with password and email change functionality
 
-**Admin Panel**
+### 🛡️ Admin Panel
 
 - Shipment metrics overview with status distribution
 - Courier assignment workflow with availability tracking
-- User role management  promote users to couriers on the fly
+- User role management: promote users to couriers on the fly
 - Comprehensive audit log viewer with filtering by action, target, and actor
 - Shipment filtering and sorting controls
 
-**User Experience**
+### 📦 User Experience
 
 - Create and manage shipments with pickup/delivery addresses
-- View only owned shipments enforced at both API and UI level
+- View only owned shipments, enforced at both API and UI level
 - Search, filter, and segment shipments by status (Active, Completed, Cancelled)
 - Real-time shipment tracking page with live status updates
 
-**Courier Workspace**
+### 🏍️ Courier Workspace
 
 - View only assigned deliveries with segmented filters (Ready Now, In Transit, Completed)
 - Update tracking status with notes and optional GPS coordinates
 - Toggle availability status for dispatch readiness
 - Delivery note requirement for completed shipments
 
-**Security**
+### 🔐 Security
 
 - JWT authentication with refresh token rotation and SHA-256 hashing
 - Role based access control (RBAC) with ownership enforcement
 - Rate limiting (per-endpoint throttling for auth routes)
 - Helmet.js security headers and CORS configuration
-- Global exception filter no stack traces or internal errors leak to clients
+- Global exception filter: no stack traces or internal errors leak to clients
 - Input validation with `class-validator` and `forbidNonWhitelisted` rejection
 - UUID validation on all route parameters
 
-**Real-Time Tracking**
+### ⚡ Real-Time Tracking
 
 - Socket.IO WebSocket gateway with JWT-authenticated connections
 - Per shipment rooms (`shipment:<id>`) for targeted event broadcasting
 - Live tracking event streaming on shipment detail pages
 - Automatic room join/leave lifecycle management
 
-**Infrastructure**
+### 🏗️ Infrastructure
 
 - Multi stage Docker builds for optimized production images
 - Docker Compose orchestration (production + dev configurations)
@@ -142,7 +167,7 @@ The Smart Logistics System is a modern, production grade web application that re
 ### Project Structure
 
 ```text
-Smart-Logistic-Platform/
+logistics-system/
 ├── backend/
 │   ├── prisma/                  # Schema, migrations, seed script
 │   └── src/
@@ -171,7 +196,7 @@ Smart-Logistic-Platform/
 
 ### Real Time Tracking Flow
 
-```
+```text
   Courier updates status          Backend processes event
   via REST API            ──►     and saves to database
                                           │
@@ -203,6 +228,7 @@ npm run dev
 ```
 
 This launches:
+
 - **PostgreSQL** on port `5432` (via Docker)
 - **Backend** on port `3001` (NestJS with hot-reload)
 - **Frontend** on port `3000` (Next.js dev server)
@@ -224,11 +250,13 @@ docker compose up --build
 ### Manual Setup
 
 1. **Start PostgreSQL**
+
    ```bash
    docker compose -f docker-compose.dev.yml up -d
    ```
 
 2. **Backend**
+
    ```bash
    cd backend
    npm install
@@ -238,6 +266,7 @@ docker compose up --build
    ```
 
 3. **Frontend**
+
    ```bash
    cd frontend
    npm install
@@ -261,6 +290,8 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
 ---
 
 ## API Reference
+
+> Swagger documentation is available at `/api` in development mode.
 
 ### Authentication
 
@@ -322,22 +353,23 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
 | GET | `/health` | Liveness check | Public |
 | GET | `/health/readiness` | Database readiness | Public |
 
-> Swagger documentation is available at `/api` in development mode.
-
 ---
 
 ## Security & Access Control
 
 The backend enforces role aware and ownership aware access at every layer:
 
-- **ADMIN:** Full access to all shipments, users, couriers, and audit logs
-- **USER:** Can only access shipments they created
-- **COURIER:** Can only access shipments assigned to their courier record
-- **Tracking events:** Restricted to the assigned courier or admins
+| Role | Access |
+|---|---|
+| **ADMIN** | Full access to all shipments, users, couriers, and audit logs |
+| **USER** | Can only access shipments they created |
+| **COURIER** | Can only access shipments assigned to their courier record |
+| **Tracking events** | Restricted to the assigned courier or admins |
 
-The UI is role specific, but the **real security boundary is enforced in the backend**. Even if the frontend were bypassed, unauthorized API calls would be rejected.
+> The UI is role specific, but the **real security boundary is enforced in the backend**. Even if the frontend were bypassed, unauthorized API calls would be rejected.
 
-Additional protections:
+**Additional protections:**
+
 - Rate limiting on authentication endpoints (5 requests/minute)
 - Global rate limiting (60 requests/minute)
 - Request payload validation with unknown field rejection
@@ -402,11 +434,13 @@ The GitHub Actions workflow automatically runs on every push and pull request:
 A suggested walkthrough for showcasing the platform:
 
 1. **Start the stack**
+
    ```bash
    docker compose up --build
    ```
 
 2. **Seed demo data**
+
    ```bash
    cd backend && npm run prisma:seed
    ```
@@ -435,24 +469,30 @@ Contributions are welcome! If you find issues or have ideas for improvements, fe
 
 1. **Fork the repository**
 2. **Create your feature branch**
+
    ```bash
    git checkout -b feature/YourFeature
    ```
+
 3. **Commit your changes**
+
    ```bash
    git commit -m "Add YourFeature"
    ```
+
 4. **Push to the branch**
+
    ```bash
    git push origin feature/YourFeature
    ```
+
 5. **Open a pull request**
 
-Please ensure your code passes all quality checks (`npm run format:check && npm run lint && npm run typecheck && npm run test`) before submitting.
+Please ensure your code passes all quality checks before submitting:
 
----
-
-
+```bash
+npm run format:check && npm run lint && npm run typecheck && npm run test
+```
 
 ---
 
